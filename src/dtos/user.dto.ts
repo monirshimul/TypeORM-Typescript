@@ -15,4 +15,23 @@ export class CreateUser {
 
     @IsBoolean()
     isActive: boolean
+
+    @IsString() @MinLength(3)
+    username: string;
+
+    @IsString() @MinLength(6)
+    password: string;
+
+}
+
+export class UserLogin {
+    public constructor(init?:Partial<UserLogin>) {
+        Object.assign(this, init);
+    }
+
+    @IsString() @MinLength(3)
+    username: string;
+
+    @IsString() @MinLength(6)
+    password: string;
 }
